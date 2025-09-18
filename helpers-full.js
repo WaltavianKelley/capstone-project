@@ -389,6 +389,26 @@ function onEvent(id, type, callback) {
     }
   }
   
+// in helpers-full.js
+
+/**
+ * A helper function to clear the text value of an input element.
+ * @param {string} elementId - The ID of the <input> element to clear.
+ */
+function clearValue(elementId) {
+  // First, get the input element from the page using its ID.
+  const inputElement = document.getElementById(elementId);
+
+  // Check if the element was actually found.
+  if (inputElement) {
+    // If we found it, set its 'value' property to an empty string.
+    inputElement.value = "";
+  } else {
+    // If not, print a helpful error message to the console.
+    console.error(`clearValue: Element with id '${elementId}' not found.`);
+  }
+}
+  
   /**
    * Check if an element has a class.
    * @example if (hasClass("title", "highlight")) { ... }
